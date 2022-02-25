@@ -16,7 +16,7 @@ class UsersForm extends Component{
 
     this.handleFirstName = this.handleFirstName.bind(this);
     this.handleLastName = this.handleLastName.bind(this);
-
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleFirstName(e){
@@ -33,7 +33,12 @@ class UsersForm extends Component{
 
   handleSubmit(e){
     e.preventDefault();
-    
+    const {firstName, lastName} = this.state;
+    this.props.submitAction({firstName, lastName});
+    this.setState({
+      firstName: "",
+      lastName: ""
+    })
   }
 
   render(){
@@ -44,13 +49,13 @@ class UsersForm extends Component{
           <Section>
             <div>
               <label htmlFor="firstName">First Name:</label>
-              <input required id="firstName" type="text" value={this.firstName} placeholder= "First Name" onChange={this.handleFirstName} />
+              <input required id="firstName" type="text" value={this.state.firstName} placeholder= "First Name" onChange={this.handleFirstName} />
             </div>
             <div>
               <label htmlFor="lastName">Last Name:</label>
-              <input required id="lastName" type="text" value={this.lastName} placeholder= "Last Name" onChange={this.handleLastName} />
+              <input required id="lastName" type="text" value={this.state.lastName} placeholder= "Last Name" onChange={this.handleLastName} />
             </div>
-            <Button>Create</Button>
+            <Button type="submit">Create</Button>
           </Section>
         </Form>
       </>

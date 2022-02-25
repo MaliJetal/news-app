@@ -40,7 +40,7 @@ class UsersList extends Component{
                     {user.lastName}
                   </p>
                 </section>
-                <Button style={{backgroundColor: "red"}}>
+                <Button style={{backgroundColor: "red"}} onClick= {() => this.props.onDeleteUser(user.id)}>
                   Delete
                 </Button>
               </Item>
