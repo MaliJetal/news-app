@@ -25,7 +25,7 @@ class UsersList extends Component{
             }
             else{
               if(a.lastName > b.lastName){
-                return 1;
+                return +1;
               }
               else{
                 return -1;
