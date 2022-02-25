@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+
 import {getUsersRequest} from './actions/users';
+import StyledHeader from './components/styles/Header.styled';
+import UsersList from './components/UsersList';
+import UsersForm from './components/UsersForm';
 
 class App extends Component {
   constructor(props){
@@ -8,25 +12,17 @@ class App extends Component {
     this.props.getUsersRequest();
   }
   render(){
+    const users = this.props.users;
     return (
       <div className="App">
-        Test
-
+        <StyledHeader>
+          The Users Information
+        </StyledHeader>
+        <UsersForm />
+        <UsersList users={users.items}></UsersList>
       </div>
     );
   }
 }
 
-// function App(props) {
-//   useEffect(()=> {
-//     props.getUsersRequest();
-//   }, [])
-//   return (
-//     <div className="App">
-//       Test
-
-//     </div>
-//   );
-// }
-
-export default connect(null, {getUsersRequest})(App);
+export default connect(({users})=> ({users}), {getUsersRequest})(App);

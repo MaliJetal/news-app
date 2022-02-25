@@ -10,6 +10,15 @@ export default function users(state = initialState, action) {
         items: action.payload.items
       }
     }
+
+    case Types.CREATE_USER_REQUEST: {
+      return{
+        ...state,
+        firstName: action.payload.firstName,
+        lastName: action.payload.lastName
+      }
+    }
+    
     default: {
       return state;
     }
