@@ -1,6 +1,7 @@
 # News App using Redux and Redux Saga
 
 This application develop to learn redux saga and redux saga related libraries.
+
    
 ## Available Scripts
 
