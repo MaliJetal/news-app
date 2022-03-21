@@ -1,6 +1,6 @@
 # News App using Redux and Redux Saga
 
-This application develop to learn redux saga and redux saga related libraries.
+This application develop to learn redux saga and redux saga related libraries.The redux saga testing using react client is made.
    
 ## Available Scripts
 
